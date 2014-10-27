@@ -9,6 +9,28 @@ var _appState = {
   data: []
 };
 
+function generateRandom() {
+  return (Math.random() * Date.now() | 0).toString(36);
+}
+
+function createRow(content) {
+  _appState.data.push({
+    id: generateRandom(),
+    content: content,
+    metadata: [
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom(),
+      generateRandom()
+    ]
+  });
+}
+
 var ExampleStore = merge(EventEmitter.prototype, {
   emitChange: function () {
     this.emit(CHANGE_EVENT);
@@ -31,7 +53,7 @@ var ExampleStore = merge(EventEmitter.prototype, {
 
     switch (action.actionType) {
       case ExampleConstants.CREATE_ROW: {
-        console.log('Not implemented yet');
+        createRow(action.content);
         ExampleStore.emitChange();
         break;
       }
