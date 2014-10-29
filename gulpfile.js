@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
-var karma = require('karma').server;
 var merge = require('react/lib/merge');
 
 var SRC = './src/**/*.js';
