@@ -18,6 +18,7 @@ module.exports = {
       ExampleDispatcher$: path.join(__dirname, 'src/dispatchers/ExampleDispatcher.js'),
       ExampleConstants$: path.join(__dirname, 'src/constants/ExampleConstants.js'),
       ExampleActions$: path.join(__dirname, 'src/actions/ExampleActions.js'),
+      propsEqual$: path.join(__dirname, 'src/utils/propsEqual.js')
     }
   }
 };

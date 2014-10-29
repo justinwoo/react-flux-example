@@ -9,6 +9,9 @@ var _appState = {
   data: []
 };
 
+// expose appstate for debugging
+global.appState = _appState;
+
 function generateRandom() {
   return (Math.random() * Date.now() | 0).toString(36);
 }
