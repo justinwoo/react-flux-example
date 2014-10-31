@@ -11,12 +11,15 @@
     "gulp": "^3.8.9",
     "gulp-util": "^3.0.1",
     "jest": "^0.1.37",
-    "jsx-loader": "^0.11.2",
+    "jsx-loader": "^0.12.0",
     "webpack": "^1.4.8",
     "PropRenderMixin": "git://github.com/kimagure/PropRenderMixin.git"
   },
   "dependencies": {
+    "express": "^4.10.1",
     "flux": "^2.0.1",
-    "react": "^0.11.2"
+    "node-jsx": "^0.12.0",
+    "react": "^0.12.0",
+    "react-tools": "^0.12.0"
   }
 }

@@ -1,7 +1,6 @@
-/** @jsx React.DOM **/
 var React = require('react');
-var ExampleStore = require('ExampleStore');
-var ExampleActions = require('ExampleActions');
+var ExampleStore = require('../stores/ExampleStore');
+var ExampleActions = require('../actions/ExampleActions');
 var ExampleTable = require('./ExampleTable');
 
 module.exports = React.createClass({
@@ -10,9 +9,6 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    if (!this.state) {
-      return null;
-    }
     return (
       <div className='example-app'>
         <h1>This is an example app</h1>
@@ -28,6 +24,13 @@ module.exports = React.createClass({
         />
       </div>
     );
+  },
+
+  getInitialState: function () {
+    var appState = ExampleStore.getAppState();
+    return {
+      data: appState.data
+    }
   },
 
   _onChange: function () {

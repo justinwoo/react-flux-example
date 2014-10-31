@@ -2,7 +2,8 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
-var merge = require('react/lib/merge');
+var karma = require('karma').server;
+var assign = require('react/lib/Object.assign');
 
 var SRC = './src/**/*.js';
 
@@ -28,7 +29,7 @@ var webpackHandler = function (name, callback) {
 };
 
 gulp.task('build:webpack', function (callback) {
-  var config = merge(webpackConfig, {
+  var config = assign({}, webpackConfig, {
     devtool: 'source-map'
   });
   webpack(config, webpackHandler('build:webpack', callback));

@@ -1,18 +1,17 @@
-/** @jsx React.DOM **/
 var React = require('react');
 var ExampleElement = require('./ExampleElement');
 var ReactComponentWithPureRenderMixin = require('react/lib/ReactComponentWithPureRenderMixin');
-var propsEqual = require('propsEqual');
+var propsEqual = require('../utils/propsEqual');
 var PropRenderMixin = require('PropRenderMixin');
 
 module.exports = React.createClass({
-  //mixins: [ReactComponentWithPureRenderMixin],
+  mixins: [ReactComponentWithPureRenderMixin],
 
   //shouldComponentUpdate: function (nextProps) {
     //return !propsEqual(this.props, nextProps);
   //},
 
-  mixins: [PropRenderMixin],
+  //mixins: [PropRenderMixin],
 
   render: function () {
     var metadata = this.props.entry.metadata.map(function (entry) {
