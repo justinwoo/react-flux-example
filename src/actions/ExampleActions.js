@@ -1,5 +1,5 @@
-var ExampleDispatcher = require('ExampleDispatcher');
-var ExampleConstants = require('ExampleConstants');
+var ExampleDispatcher = require('../dispatchers/ExampleDispatcher');
+var ExampleConstants = require('../constants/ExampleConstants');
 
 module.exports = {
   createRow: function (content) {

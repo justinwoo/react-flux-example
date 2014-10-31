@@ -1,7 +1,7 @@
-var ExampleDispatcher = require('ExampleDispatcher');
+var ExampleDispatcher = require('../dispatchers/ExampleDispatcher');
 var EventEmitter = require('events').EventEmitter;
-var ExampleConstants = require('ExampleConstants');
-var merge = require('react/lib/merge');
+var ExampleConstants = require('../constants/ExampleConstants');
+var assign = require('react/lib/Object.assign');
 
 var CHANGE_EVENT = 'change';
 
@@ -34,7 +34,7 @@ function createRow(content) {
   });
 }
 
-var ExampleStore = merge(EventEmitter.prototype, {
+var ExampleStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
     this.emit(CHANGE_EVENT);
   },
